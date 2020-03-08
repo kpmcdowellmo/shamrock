@@ -1,4 +1,4 @@
-import { LeBtn } from "./LeBtn/LeBtn.js";
+import { luckyButton } from "./LeBtn/LeBtn.js";
 import { html, define } from "heresy";
 
-export default { LeBtn, html, define };
+export default { luckyButton, html, define };
