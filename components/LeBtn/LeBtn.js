@@ -1,6 +1,12 @@
-import { define } from "heresy";
+import { define, html, render } from "heresy";
 
-class LeBtn extends HTMLElement {
+class LeBtn extends HTMLButtonElement {
+  static get tagName(){
+    return "button";
+  }
+  static get name(){
+    return "le-btn"
+  }
   static style(LeBtn) {
     return `${LeBtn}
                 background-color: #000;
@@ -8,19 +14,26 @@ class LeBtn extends HTMLElement {
             `;
   }
 
-  oninit(e) {
-    console.log("init");
-    this.text = this.getAttribute("text") || "submit";
+  get mappedAttributes() {
+    return ["text"];
+  }
+
+  onattributechanged(e){
+    console.log("changed")
+  }
+  static ontext(event){
+    console.log("text")
+  }
+
+  oninit(e){
+    this.text = this.getAttribute("text") || "Submit";
   }
 
   render() {
-    this.html`<button>${this.text}</button>`;
-  }
-
-  onclick(e){
+    this.html`${this.text}`;
   }
 }
 
-const luckyButton = define("LeBtn", LeBtn);
+const luckyButton = define("LeBtn<button>", LeBtn);
 
-export { luckyButton, LeBtn };
+export { luckyButton };
