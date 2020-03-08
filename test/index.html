@@ -4,5 +4,6 @@
 <body>
 </body>
 <script>
-    lucky.render(document.body, lucky.html`<LeBtn text="teststuff"/>`)
+    window.something = "asdfasdfasdfasdfsadf";
+    lucky.render(document.body, lucky.html`<LeBtn props=${{text: window.something}}/>`)
 </script>

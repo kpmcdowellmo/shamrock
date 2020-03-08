@@ -30,12 +30,8 @@ class LeBtn extends HTMLButtonElement {
     console.log("text")
   }
 
-  oninit(e){
-    this.text = this.getAttribute("text") || "Submit";
-  }
-
   render() {
-    this.html`${this.text}`;
+    this.html`${this.props.text}`;
   }
 }
 
