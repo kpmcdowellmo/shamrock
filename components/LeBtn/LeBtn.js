@@ -14,14 +14,19 @@ class LeBtn extends HTMLButtonElement {
             `;
   }
 
+  // observed attributes for use with onattributechanged (like HyperHTMLElement)
+  // get observedAttributes(){
+  //   return ["text"];
+  // }
+
   get mappedAttributes() {
     return ["text"];
   }
 
-  onattributechanged(e){
-    console.log("changed")
-  }
-  static ontext(event){
+  // onattributechanged(event = {attributeName, oldValue, newValue}){
+  //   console.log("please god something happen???")
+  // }
+  ontext(event){
     console.log("text")
   }
 
